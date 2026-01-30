@@ -1,4 +1,4 @@
-Hackathon Project 2026:  Abstract Submission\n
+Hackathon Project 2026:  Abstract Submission
 Group: Hurrain Ghaffar, Irene Kellegher, Izabela Heczkova
 Team: Rubus Labs
 Project Name: Plant Sensor 
