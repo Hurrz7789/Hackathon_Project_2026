@@ -16,6 +16,8 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 **Intelligent Analysis:** Interprets environmental data against pre-defined thresholds tailored to specific plant species.
 
+**Data Logging:** Automatically stores hourly readings in CSV format for long-term trend analysis and statistical graphing.
+
 
 ## 🛠️ Hardware & Tech Stack
 
