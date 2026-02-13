@@ -8,36 +8,29 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 ## 🚀 Key Features
 
-* 
 **Real-time Monitoring:** Tracks ambient temperature and humidity using the Raspberry Pi Sense HAT.
 
 
-* 
 **Visual Feedback:** An 8x8 LED Matrix provides instant status icons (e.g., Green for optimal, Red for temperature spikes).
 
 
-* 
 **Intelligent Analysis:** Interprets environmental data against pre-defined thresholds tailored to specific plant species.
+
 
 ## 🛠️ Hardware & Tech Stack
 
-* 
 **Core:** Raspberry Pi 
 
 
-* 
 **Sensors:** Sense HAT (Temperature, Humidity) 
 
 
-* 
 **Imaging:** Camera Module v3 
 
 
-* 
 **Language:** Python 
 
 
-* 
 **Storage:** CSV for data logging 
 
 
