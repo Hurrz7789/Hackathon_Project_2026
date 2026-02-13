@@ -29,20 +29,3 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 
 **Language:** Python 
-
-
-**Storage:** CSV for data logging 
-
-
-
-## 👥 Team Rubus Labs
-
-| Member | Primary Role | Responsibilities |
-| --- | --- | --- |
-| **Izabela Heczkova** | Project Manager | Timelines, requirements, and document synthesis 
-
- |
-| **Hurrain Ghaffar** | Lead Code Developer | Python development, sensor integration, and GitHub management 
-
- |
-| **Irene Kellegher** | Systems Specialist | Hardware configuration, testing, and troubleshooting 
