@@ -2,24 +2,27 @@ import csv
 import os
 import time
 import subprocess # Needed to talk to GitHub
-import random # for fake data
+import random 
 from datetime import datetime
-#from sense_hat import SenseHat
 
-# Temporary Mock Class for testing without hardware
+# Temporary Mock Class
 class SenseHat:
     def get_temperature(self):
-        return random.uniform(15.0, 35.0) # Random temp between 15 and 35
+        return random.uniform(15.0, 35.0) 
     def get_humidity(self):
-        return random.uniform(30.0, 60.0) # Random humidity between 30 and 60
+        return random.uniform(30.0, 60.0)
 
-# Initialize Sense HAT
 sense = SenseHat()
 
-# File Configuration
-FILE_NAME = "flora_logs.txt"
+# --- FOLDER CONFIGURATION ---
+FOLDER_NAME = "logs"
+FILE_NAME = os.path.join(FOLDER_NAME, "flora_logs.txt")
 
-# Initialize the CSV file with headers if it doesn't exist 
+# Create the logs folder if it doesn't exist
+if not os.path.exists(FOLDER_NAME):
+    os.makedirs(FOLDER_NAME)
+
+# Initialize the CSV file with headers
 if not os.path.exists(FILE_NAME):
     with open(FILE_NAME, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -28,37 +31,39 @@ if not os.path.exists(FILE_NAME):
 def sync_to_github():
     """Tells the computer to upload the updated file to GitHub"""
     try:
-        subprocess.run(["git", "add", FILE_NAME], check=True)
-        subprocess.run(["git", "commit", "-m", "Auto-update plant logs"], check=True)
+        # We add the whole folder to catch the new file structure
+        subprocess.run(["git", "add", "."], check=True)
+        subprocess.run(["git", "commit", "-m", "Auto-update flora logs"], check=True)
         subprocess.run(["git", "push"], check=True)
-        print("Successfully synced to GitHub!")
+        print("✅ Successfully synced to GitHub!")
     except Exception as e:
-        print(f"GitHub sync failed: {e}. (Make sure you are in the cloned folder!)")
+        print(f"❌ GitHub sync failed: {e}")
 
 def log_data():
-    # Collect real-time environmental data
     temp = round(sense.get_temperature(), 2)
     humidity = round(sense.get_humidity(), 2)
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")	# get current date
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Analyze against thresholds (Example: 8-22°C is optimal) 
+    # Threshold check
     status = "Optimal" if 8 <= temp <= 22 else "Hot"
     
-    # Append hourly readings to the CSV 
     with open(FILE_NAME, mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([timestamp, temp, humidity, status])
     
-    print(f"Data logged at | {timestamp}: | {temp} C | {humidity}% | {status} |")
-
-# NEW: Upload to GitHub immediately after logging
-    sync_to_github()
+    print(f"📝 Logged: {timestamp} | {temp}C | {status}")
     
-# Run every 10 seconds for testing
-while True:
-    log_data()
-    print("Waiting 10 seconds for next log...")
-    time.sleep(10)
+    # Sync to GitHub after writing the file
+    sync_to_github()
+
+# MAIN LOOP
+if __name__ == "__main__":
+    print("🌿 FloraGuard is starting...")
+    while True:
+        log_data()
+        print("Waiting 60 seconds...") # Shortened for testing
+        time.sleep(60)
+
 
 
 
