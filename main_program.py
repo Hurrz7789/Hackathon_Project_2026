@@ -6,6 +6,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import random
+import os
+import csv
+from datetime import datetime
 
 # -------------------------------
 # Fake SenseHat for Testing
@@ -123,15 +126,31 @@ def optimum():
 # Too cold → Below 8°C
 # Optimal → 8–22°C
 # Too warm → Above 22°C
+# Create csv log to store and save data
+def log_to_csv(temperature, humidity):
 
+    file_exists = os.path.isfile("floraguard_log.csv")
+    
+    with open("floraguard_log.csv", mode="a", newline="") as file:
+        writer = csv.writer(file)
+
+        # Write header only if file doesn't exist
+        if not file_exists:
+            writer.writerow(["Timestamp", "Temperature (°C)", "Humidity (%)", "Status - "])
+       
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        writer.writerow([timestamp, f"{temperature:.2f}", f"{humidity:.2f}"])
+        
 HOT = 22
 COLD = 8
 last_state = None # previous state
-
+        
 while True:
     temperature = sense.get_temperature() #  hot & cold
     humidity = sense.get_humidity() # wet & dry - not used (yet)
-
+    
+    log_to_csv(temperature, humidity)
+    
     if temperature > HOT:
         if last_state != "Hot":
             flash(red_warning_sign)
@@ -223,4 +242,4 @@ Keep growing 🌱
             send_email_alert(subject, body)
             last_state = "Good"
             
-            time.sleep(300) # checks every 5 minutes 
+            time.sleep(300) # checks every 5 seconds
