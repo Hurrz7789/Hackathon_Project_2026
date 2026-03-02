@@ -136,9 +136,9 @@ def log_to_csv(temperature, humidity):
 
         # Write header only if file doesn't exist
         if not file_exists:
-            writer.writerow(["Timestamp", "Temperature (°C)", "Humidity (%)", "Status - "])
+            writer.writerow(["Timestamp", "Temperature (°C)", "Humidity (%)"])
        
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S ")
         writer.writerow([timestamp, f"{temperature:.2f}", f"{humidity:.2f}"])
         
 HOT = 22
@@ -166,6 +166,7 @@ FloraGuard has detected that your plant's soil temperature is above the optimal 
 
 📊 Current Readings:
 Temperature: {temperature:.2f} °C
+Humidity: {humidity:.2f} %
 
 ⚠️ Issue Detected:
 The soil is too warm, which may cause stress to your plant if not addressed.
@@ -198,6 +199,7 @@ Your plant's soil temperature has fallen below the recommended threshold.
 
 📊 Current Readings:
 Temperature: {temperature:.2f} °C
+Humidity: {humidity:.2f} %
 
 ⚠️ Issue Detected:
 The soil is too cold and may slow plant growth.
@@ -207,7 +209,7 @@ The soil is too cold and may slow plant growth.
 • Consider relocating to a warmer area
 • Check room heating levels
 
-This is an automated alert from FloraGuard.
+This is an automated alert from FloraGuard monitoring system.
 
 Stay green 🌱  
 – Rubus Labs | FloraGuard
@@ -231,6 +233,7 @@ Your plant has returned to optimal environmental conditions.
 
 📊 Current Readings:
 Temperature: {temperature:.2f} °C
+Humidity: {humidity:.2f} %
 
 Everything is within the healthy range.
 
@@ -243,3 +246,4 @@ Keep growing 🌱
             last_state = "Good"
             
             time.sleep(300) # checks every 5 seconds
+
