@@ -131,7 +131,7 @@ def log_to_csv(temperature, humidity):
         writer = csv.writer(file)
         # Write header only if file doesn't exist
         if not file_exists:
-            writer.writerow(["Timestamp", "Temperature (°C)", "Humidity (%)", "Status - "])
+            writer.writerow(["Timestamp", "Temperature (°C)", "Humidity (%)"])
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S ")
         writer.writerow([timestamp, f"{temperature:.2f}", f"{humidity:.2f}"])
         
@@ -281,3 +281,4 @@ Stay green 🌱
     last_state = curr_state
     log_to_csv(temperature, humidity)
     time.sleep(100)
+
