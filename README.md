@@ -31,11 +31,16 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 **Core:** Raspberry Pi 
 
-
 **Sensors:** Sense HAT (Temperature, Humidity) 
 
-
 **Imaging:** Camera Module v3 
+
+## How To Run Program
+1. Set up your Raspberry Pi.
+2. Open GitHub on your browser and open the repository.
+3. Download the file (MAIN_PROGRAM.py).
+4. Launch Thonny on your Raspberry Pi and load the file.
+5. Click run and play around!
 
 
 **Language:** Python 
