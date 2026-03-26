@@ -2,7 +2,7 @@
 | Phase / Item | Timeline | Deliverable / Goal | Status | Weight |
 | :--- | :--- | :--- | :--- | :--- |
 | **Phase 1** | Week 1-4 | Project Abstract (1 page) | **DONE** | 10% |
-| **Hardware** | Mid-Week 8 | **Hardware Checkout** |**DONE**||
+| **Hardware** | Mid-Week 8 | **Hardware Checkout** |**DONE**|| - |
 | **Phase 2** | Week 8 | Functional Requirements (4-5 pages) | DONE | 25% |
 | **Phase 3** | Week 10 | **Live Presentation + Demo** | **MARCH 18!!!!!** | 35% |
 | **Hardware** | End-Week 12 | **Hardware Return** || - |
