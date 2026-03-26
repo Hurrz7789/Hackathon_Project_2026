@@ -12,11 +12,11 @@ FloraGuard: Intelligent Environmental & Soil Health Monitor
 
 **Developed by Rubus Labs** *Theme: Pl the **IoT is Bold*** 
 
-## Overview
+## 🪴Overview
 
 In today’s busy lifestyle, monitoring the "invisible" health metrics of plants is a significant challenge for indoor gardeners. **FloraGuard** is an integrated embedded system designed to bridge this gap. By leveraging real-time data and visual feedback, it prevents irreversible strain on plant health caused by subtle fluctuations in temperature, humidity, and moisture.
 
-## Key Features
+## 🔑 Key Features
 
 **Real-time Monitoring:** Tracks ambient temperature and humidity using the Raspberry Pi Sense HAT.
 
@@ -26,8 +26,9 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 **Data Logging:** Automatically stores hourly readings in CSV format for long-term trend analysis and statistical graphing.
 
+**Language:** Python 
 
-## Hardware & Tech Stack
+## ⚙️Hardware & Tech Stack
 
 **Core:** Raspberry Pi 
 
@@ -35,12 +36,9 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 **Imaging:** Camera Module v3 
 
-## How To Run Program
+## 🐍 How To Run Python Program
 1. Set up your Raspberry Pi.
 2. Open GitHub on your browser and open the repository.
 3. Download the file (MAIN_PROGRAM.py).
 4. Launch Thonny on your Raspberry Pi and load the file.
 5. Click run and play around!
-
-
-**Language:** Python 
