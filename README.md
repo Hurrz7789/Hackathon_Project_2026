@@ -20,9 +20,7 @@ In today’s busy lifestyle, monitoring the "invisible" health metrics of plants
 
 **Real-time Monitoring:** Tracks ambient temperature and humidity using the Raspberry Pi Sense HAT.
 
-
 **Visual Feedback:** An 8x8 LED Matrix provides instant status icons (e.g., Green for optimal, Red for temperature spikes).
-
 
 **Intelligent Analysis:** Interprets environmental data against pre-defined thresholds tailored to specific plant species.
 
