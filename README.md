@@ -5,7 +5,7 @@
 | **Hardware** | Mid-Week 8 | **Hardware Checkout** |**DONE**|| 
 | **Phase 2** | Week 8 | Functional Requirements (4-5 pages) | DONE | 25% |
 | **Phase 3** | Week 10 | **Live Presentation + Demo** | **MARCH 18!!!!!** | 35% |
-| **Hardware** | End-Week 12 | **Hardware Return** || - |
+| **Hardware** | End-Week 12 | **Hardware Return** | DONE | - |
 | **Phase 4** | Week 14 | Design Document (8-12 pages) || 30% |
 --------------------------------------------------------------------------------------------------------------------
 FloraGuard: Intelligent Environmental & Soil Health Monitor
