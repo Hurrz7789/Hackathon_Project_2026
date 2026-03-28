@@ -2,7 +2,14 @@
 # FloraGuard Environmental Monitor
 # Rubus Labs
 # ==============================
+# How to run program:
+# 1. Set up your Raspberry Pi.
+# 2. Open GitHub on your browser and open the repository.
+# 3. Download the file (MAIN_PROGRAM.py).
+# 4. Launch Thonny on your Raspberry Pi and load the file.
+# 5. Click run and play around!
 
+# Impored libraries 
 from sense_hat import SenseHat
 import os
 import csv
@@ -17,7 +24,7 @@ from email.mime.multipart import MIMEMultipart
 # ------------------------------
 # Email Configuration
 # ------------------------------
-
+# Code generation for email using OpenAI 
 SENDER_EMAIL = "rubuslabs@gmail.com"
 APP_PASSWORD = "gbqzuxgifpqxckpu"
 RECEIVER_EMAIL = "hurrainghaffar77@gmail.com"
@@ -163,7 +170,7 @@ while True:
     r, g, b, clear=sense.color.color_raw
     light = clear
     
-    # CPU Heat Correction
+    # CPU Heat Correction - OpenAI
     cpu = get_cpu_temp()
     temperature = raw_temp - ((cpu - raw_temp) / 1.5)
 
